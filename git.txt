@@ -1,0 +1,31 @@
+获取git库的方法——————
+
+通1，过git初始化命令,将一个已经存在的文件夹创建为一个Git版本库
+  --在任意一个文件夹，右键选择Git Bash,输入Git init即可，默认会创建一个隐藏的.git文件夹作为Git工作环境的配置目录，记录git版本管理追踪信息。
+  --任何带有这个文件夹的目录都是git库
+  2，通过git clone命令可以克隆他人的git库为自己本地仓库
+  --在想要克隆的目录下右键选Git Bash,输入Git clone + 粘贴来的库链接
+  git库的获取与工作
+  git库中所有文件都在这三种状态下，已修改（modified），已暂存（staged）,已提交（committed）
+  Git三大工作区，工作目录（working directory），暂存区（staging area），版本库（repostory）
+  在git库中运行git bash，输入git status，来查看当前工作目录下的文件状态
+  --nothing to commit working tree clean 表示当前目录文件状态干净，未被修改
+  --Untracked files: 会用红色高亮列出未被追踪的文件
+  --changes not staged for commit：会用红色高亮列出未为提交而暂存的更改的文件
+  --deleted:会用红色高亮列出被删除的文件
+  --modified:红色高亮已修改的文件
+  
+  使用git stadus --short  可以查看文件状态的概览，short可以用-s简写
+  -- A表示本地新增的文件（服务器上没有）
+  -- C表示文件的一个新拷贝
+  -- D表示本地删除的文件（服务器上还在）
+  -- M表示文件的内容或者mode被修改了
+  -- R文件名被修改了
+  -- T文件的类型被修改了
+  -- U文件没有被合并（你需要完成合并才能提交）
+  -- X未知状态
+  -- ？文件处于未被追踪的状态
+  -- 上述各自的状态用字母表示，但字母前有空格表示文件都处于暂存区
+  
+ git文件的追踪与更新——————
+ --git add，使用Git add+文件或文件夹名，即可将其追踪到工作区
